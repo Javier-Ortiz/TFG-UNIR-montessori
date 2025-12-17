@@ -1,0 +1,42 @@
+::#####################################
+:: --- PROYECTO PARA TFG DE LA UNIR ---
+:: Autor: Francisco Javier Ortiz Gonzalez
+:: Fecha: Diciembre, 2025
+:: Licencia: AGPL_v3
+:: ######################################
+
+Para asegurar la correcta configuración de nuestro entorno de desarrollo, es decir, de Visual Studio Code, 
+y confirmar que el código se ejecutará en nuestro workspace (espacio de trabajo) 
+y en nuestro entorno virtual de Python debemos realizar los siguientes pasos:
+
+1-	Después de ejecutar el script que crea entorno virtual nos aseguramos que se ha creado la carpeta en la ruta establecida: “D:\JAVI\Varios\UNIR\TFG”
+2-	Abrir Visual Studio Code
+3-	Seleccionamos “File/Open folder.../” para abrir la carpeta TFG, es decir nos quedamos en el directorio padre de donde se haya creado la carpeta del entorno virtual env_tfg
+4-	Presionamos CTRL + SHIFT + P 
+5-	Seleccionamos la opción: “Python: Select Interpreter”
+6-	Debería aparecer “env_tfg”
+7-	Cerrar Visual Studio Code
+8-	Arrastrar la carpeta TFG directamente sobre el icono de Visual Studio Code
+9-	Guardamos nuestro directorio de trabajo para el proyecto, que llamaremos TFG-Workspace.code-workspace , 
+y que ubicaremos dentro de la carpeta D:\JAVI\Varios\UNIR\TFG . Para ello seleccionamos “File / Save workspace as... /”
+10-	Este archivo es el que usaremos para abrir nuestro proyecto de ahora en adelante.
+
+Puede ocurrir que al ejecutar el código la primera vez falle porque no puede activarse nuestro entorno virtual debido a las políticas de seguridad de nuestro sistema operativo.
+Para solventarlo tenemos 2 opciones posibles:
+
+
+OPCION 1: POWERSHELL
+
+Debemos deshabilitar las políticas de seguridad temporalmente durante nuestra sesión. En powershell ejecutamos como administrador el siguiente comando:
+
+Set-ExecutionPolicy RemoteSigned -Scope Process
+
+Ahora abrimos un powershell como usuario normal y ejecutar el siguiente comando:
+
+D:\Javi\Varios\UNIR\TFG\env_tfg\Scripts\Activate.ps1
+
+
+# OPCION 2: CMD
+
+Desde consola de comandos ejecutar el siguiente archivo
+D:\Javi\Varios\UNIR\TFG\env_tfg\Scripts\Activate.ps1
