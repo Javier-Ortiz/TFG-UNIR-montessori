@@ -1,0 +1,26 @@
+######################################
+# --- PROYECTO PARA TFG DE LA UNIR ---
+# Autor: Francisco Javier Ortiz Gonzalez
+# Fecha: Diciembre, 2025
+# Licencia: AGPL_v3
+######################################
+
+# Ultralytics BoT-SORT tracker 
+tracker_type: botsort         # Define el algoritmo de seguimiento a usar (botsort, bytetrack, sort)
+
+track_high_thresh: 0.2        # Confianza mínima de detección para iniciar un seguimiento
+track_low_thresh: 0.1         # Confianza mínima de detección para mantener o recuperar una pista existente
+new_track_thresh: 0.6         # Confianza requerida para que una detección se considere una persona totalmente NUEVA
+
+track_buffer: 500             # Número máximo de frames que se mantiene una ID perdida (no detectada) antes de borrarla
+match_thresh: 0.4             # Umbral de coincidencia (IOU o distancia) para vincular una detección a una ID existente
+
+gmc_method: orb     # Método de compensación de movimiento global (GMC). 'orb' es más simple que 'sparseOptFlow' para movimientos caóticos
+ten_method: TCEN              # Método de estimación de error de seguimiento para mejorar la predicción
+
+with_reid: True               # Activa la Re-Identificación (ReID) para usar la apariencia visual en el matching
+model: ../yolo/yolov8n.pt             # Nombre del modelo YOLO utilizado para la detección y extracción de características ReID
+
+proximity_thresh: 0.1         # Ponderación dada a la proximidad (predicción de movimiento) en la puntuación de coincidencia
+appearance_thresh: 0.75        # Ponderación dada a la similitud de apariencia (ReID) en la puntuación de coincidencia
+fuse_score: True              # Indica si se deben combinar
